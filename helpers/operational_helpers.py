@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
+import time
+import os
 
 
 def wait_for_element(driver, xpath, timeout=10):
@@ -21,3 +23,18 @@ def wait_for_element(driver, xpath, timeout=10):
     timeout_message = f"Element for xpath: '{xpath}' and url: {driver.current_url} not found in {timeout} seconds"
     # Waiting for the element to be visible, and returning it once it is found
     return wait.until(element_located, timeout_message)
+
+
+def make_screenshot(driver, exception_type):
+    """ Function to capture a screenshot of the webpage an save it to a file with a unique name based on the exception
+     type and timestamp.
+
+    :param driver: the WebDriver instance;
+    :param exception_type: a string that describes the type of exception that occurred;
+    :return: none;
+    """
+    screenshot_path = os.path.join('testResults', rf'{exception_type}_exception_{time.time()}.png')
+    driver.get_screenshot_as_file(screenshot_path)
+    print(f"Screenshot saved as {screenshot_path}")
+
+    

@@ -2,9 +2,10 @@ import unittest
 from selenium.webdriver.common.by import By
 
 from helpers.base_test import BaseTest
-
+from helpers.decorators import screenshot_decorator
 
 class CheckboxesPageTests(BaseTest):
+    @screenshot_decorator
     def testFirstCheckbox_whenCheckboxIsSelected_shouldReturnError(self):
         page_url = self.base_url + "checkboxes"
         self.driver.get(page_url)
@@ -16,6 +17,7 @@ class CheckboxesPageTests(BaseTest):
                          f"Expected state of the first checkbox: False, differ from actual: {first_checkbox_state},"
                          f" for page url: {self.driver.current_url}.")
 
+    @screenshot_decorator
     def testSecondCheckbox_whenCheckboxIsUnselected_shouldReturnError(self):
         page_url = self.base_url + "checkboxes"
         self.driver.get(page_url)

@@ -2,9 +2,11 @@ import unittest
 from selenium.webdriver.common.by import By
 
 from helpers.base_test import BaseTest
+from helpers.decorators import screenshot_decorator
 
 
 class DisappearingElementsPageTests(BaseTest):
+    @screenshot_decorator
     def testNumberOfElements_whenIsNotAsExpected_shouldReturnError(self):
         page_url = self.base_url + "disappearing_elements"
         self.driver.get(page_url)
