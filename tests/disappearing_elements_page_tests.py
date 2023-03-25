@@ -1,15 +1,10 @@
 import unittest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
+from helpers.base_test import BaseTest
 
-class DisappearingElementsPageTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(self):
-        self.driver = webdriver.Chrome(service=Service(r'C:\TestFiles\chromedriver.exe'))
-        self.base_url = "https://the-internet.herokuapp.com/"
 
+class DisappearingElementsPageTests(BaseTest):
     def testNumberOfElements_whenIsNotAsExpected_shouldReturnError(self):
         page_url = self.base_url + "disappearing_elements"
         self.driver.get(page_url)
@@ -23,10 +18,6 @@ class DisappearingElementsPageTests(unittest.TestCase):
                          f" Expected number of the elements on the page: {expected_list_elements_number}"
                          f" differ from actual: {list_elements_number}, for page url: {self.driver.current_url}.")
     
-    @classmethod
-    def tearDownClass(self):
-        self.driver.quit()
-
 
 if __name__ == '__main__':
     unittest.main()

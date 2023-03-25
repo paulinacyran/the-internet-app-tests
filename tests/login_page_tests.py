@@ -1,16 +1,10 @@
 import unittest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 
+from helpers.base_test import BaseTest
 from helpers import functional_helpers as fh
 
 
-class LoginPageTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(self):
-        self.driver = webdriver.Chrome(service=Service(r'C:\TestFiles\chromedriver.exe'))
-        self.base_url = "https://the-internet.herokuapp.com/"
-
+class LoginPageTests(BaseTest):
     def testLoginForm_whenLoginIsValidAndPasswordIsValid_shouldSuccessfulLogin(self):
         page_url = self.base_url + "login"
         username = "tomsmith"
@@ -56,10 +50,6 @@ class LoginPageTests(unittest.TestCase):
                          f"Expected message text: '{expected_message_element_text}' differ from actual:"
                          f" '{message_element_text}', for page url: {self.driver.current_url}.")
     
-    @classmethod
-    def tearDownClass(self):
-        self.driver.quit()
-
 
 if __name__ == '__main__':
     unittest.main()

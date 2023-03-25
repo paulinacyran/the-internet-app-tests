@@ -1,15 +1,10 @@
 import unittest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
+from helpers.base_test import BaseTest
 
-class CheckboxesPageTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(self):
-        self.driver = webdriver.Chrome(service=Service(r'C:\TestFiles\chromedriver.exe'))
-        self.base_url = "https://the-internet.herokuapp.com/"
 
+class CheckboxesPageTests(BaseTest):
     def testFirstCheckbox_whenCheckboxIsSelected_shouldReturnError(self):
         page_url = self.base_url + "checkboxes"
         self.driver.get(page_url)
@@ -31,11 +26,7 @@ class CheckboxesPageTests(unittest.TestCase):
         self.assertEqual(True, second_checkbox_state,
                          f"Expected state of the second checkbox: True, differ from actual: {second_checkbox_state},"
                          f" for page url: {self.driver.current_url}.")
-
-    @classmethod
-    def tearDownClass(self):
-        self.driver.quit()
-        
+       
         
 if __name__ == '__main__':
     unittest.main()
