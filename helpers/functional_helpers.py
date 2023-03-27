@@ -38,3 +38,29 @@ def user_login(driver, page_url, username, password):
     
     # Returning the text of the message element
     return message_element_text
+
+
+# Key Presses Page Tests helpers
+def find_result_text(driver, page_url, key):
+    """ Function to enter a given key to the input element and retrieve the result text from a specified text element.
+
+    :param driver: the WebDriver instance;
+    :param page_url: the URL of the tested page;
+    :param key: the value to sent to the input element;
+    :return: the result text that appears after sending the key to the input element;
+    """
+    # Navigating to the specified page URL
+    driver.get(page_url)
+    
+    # Finding the input element using XPath and storing it in variable
+    input_element = driver.find_element(By.XPATH, '//input[@id="target"]')
+    
+    # Sending the key to the input element
+    input_element.send_keys(key)
+
+    # Retrieving the result text and storing it in a variable
+    text_element = driver.find_element(By.XPATH, '//p[@id="result"]')
+    result_text = text_element.text
+    
+    # Returning the result text
+    return result_text
