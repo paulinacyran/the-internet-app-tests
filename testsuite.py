@@ -1,5 +1,6 @@
 import unittest
 
+from tests.basic_auth_page_tests import BasicAuthPageTests
 from tests.checkboxes_page_tests import CheckboxesPageTests
 from tests.disappearing_elements_page_tests import DisappearingElementsPageTests
 from tests.key_presses_page_tests import KeyPressesPageTests
@@ -11,6 +12,7 @@ def all_tests_suite():
     # Initializing the test suite
     test_suite = unittest.TestSuite()
     # Adding tests to the test suite
+    test_suite.addTest(unittest.makeSuite(BasicAuthPageTests))
     test_suite.addTest(unittest.makeSuite(CheckboxesPageTests))
     test_suite.addTest(unittest.makeSuite(DisappearingElementsPageTests))
     test_suite.addTest(unittest.makeSuite(KeyPressesPageTests))
