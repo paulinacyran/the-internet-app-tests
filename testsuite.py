@@ -3,6 +3,7 @@ import unittest
 from tests.basic_auth_page_tests import BasicAuthPageTests
 from tests.checkboxes_page_tests import CheckboxesPageTests
 from tests.disappearing_elements_page_tests import DisappearingElementsPageTests
+from tests.hovers_page_tests import HoversPageTests
 from tests.key_presses_page_tests import KeyPressesPageTests
 from tests.login_page_tests import LoginPageTests
 from tests.typos_page_tests import TyposPageTests
@@ -15,6 +16,7 @@ def all_tests_suite():
     test_suite.addTest(unittest.makeSuite(BasicAuthPageTests))
     test_suite.addTest(unittest.makeSuite(CheckboxesPageTests))
     test_suite.addTest(unittest.makeSuite(DisappearingElementsPageTests))
+    test_suite.addTest(unittest.makeSuite(HoversPageTests))
     test_suite.addTest(unittest.makeSuite(KeyPressesPageTests))
     test_suite.addTest(unittest.makeSuite(LoginPageTests))
     test_suite.addTest(unittest.makeSuite(TyposPageTests))
