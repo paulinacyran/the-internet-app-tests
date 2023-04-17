@@ -4,6 +4,7 @@ from tests.basic_auth_page_tests import BasicAuthPageTests
 from tests.checkboxes_page_tests import CheckboxesPageTests
 from tests.disappearing_elements_page_tests import DisappearingElementsPageTests
 from tests.drag_and_drop_page_tests import DragAndDropTests
+from tests.dynamic_loading_page_tests import DynamicLoadingPageTests
 from tests.hovers_page_tests import HoversPageTests
 from tests.key_presses_page_tests import KeyPressesPageTests
 from tests.login_page_tests import LoginPageTests
@@ -18,6 +19,7 @@ def all_tests_suite():
     test_suite.addTest(unittest.makeSuite(CheckboxesPageTests))
     test_suite.addTest(unittest.makeSuite(DisappearingElementsPageTests))
     test_suite.addTest(unittest.makeSuite(DragAndDropTests))
+    test_suite.addTest(unittest.makeSuite(DynamicLoadingPageTests))
     test_suite.addTest(unittest.makeSuite(HoversPageTests))
     test_suite.addTest(unittest.makeSuite(KeyPressesPageTests))
     test_suite.addTest(unittest.makeSuite(LoginPageTests))
