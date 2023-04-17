@@ -7,6 +7,7 @@ So far, automated tests have been executed for subpages:
 - [Checkboxes Page Tests](https://the-internet.herokuapp.com/checkboxes)
 - [Disappearing Elements Page Tests](https://the-internet.herokuapp.com/disappearing_elements)
 - [Drag and Drop Page Tests](https://the-internet.herokuapp.com/drag_and_drop)
+- [Dynamic Loading Page Tests](https://the-internet.herokuapp.com/dynamic_loading/2)
 - [Hovers Page Tests](https://the-internet.herokuapp.com/hovers)
 - [Key Presses Page Tests](https://the-internet.herokuapp.com/key_presses?)
 - [Login Page Tests](https://the-internet.herokuapp.com/login)
